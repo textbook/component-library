@@ -33,4 +33,5 @@ pushd "$TEST_DIR"
 	  )
 	}
 	EOF
+	npm run build
 popd
