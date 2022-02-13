@@ -2,6 +2,7 @@
 version: 2.1
 
 orbs:
+  cypress: cypress-io/cypress@1.29.0
   node: circleci/node@5.0.0
 
 workflows:
@@ -17,3 +18,11 @@ workflows:
           run-command: 'test:cover'
           test-results-path: reports
           version: '14.19'
+      - cypress/run:
+          requires:
+            - node/test
+          config: baseUrl=http://localhost:4321
+          executor: cypress/base-14
+          start: npm run e2e:app
+          store_artifacts: true
+          wait-on: http-get://localhost:4321
