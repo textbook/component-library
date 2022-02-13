@@ -17,9 +17,11 @@
     "pree2e:run": "wait-on --log http-get://localhost:4321",
     "e2e:run": "cross-env CYPRESS_BASE_URL=http://localhost:4321 cypress run",
     "lint": "eslint .",
-    "test": "jest",
+    "lint:fix": "npm run lint -- --fix",
+    "ship": "npm run lint && npm run test && npm run e2e",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
