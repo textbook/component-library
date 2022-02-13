@@ -1,4 +1,5 @@
 {
+  "coverageDirectory": "reports/coverage",
   "preset": "ts-jest",
   "setupFilesAfterEnv": [
     "./setupTests.ts"
