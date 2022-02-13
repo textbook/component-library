@@ -1,0 +1,12 @@
+{
+  "name": "@codeyourfuture/component-library",
+  "version": "1.0.0",
+  "description": "Example component library with an agile approach",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jonathan Sharpe <mail@jonrshar.pe>",
+  "license": "ISC"
+}
