@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "@codeyourfuture/standard",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/strict"
+  ],
+  "ignorePatterns": [
+    "lib/",
+    "node_modules/",
+    "storybook-static/",
+    "test_app/"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "cypress/**/*.js",
+        "cypress/**/*.ts"
+      ],
+      "env": {
+        "node": true
+      },
+      "extends": [
+        "plugin:cypress/recommended"
+      ]
+    },
+    {
+      "files": [
+        "src/**/*.spec.ts",
+        "src/**/*.spec.tsx"
+      ],
+      "extends": [
+        "plugin:jest/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    },
+    {
+      "files": [
+        "src/**/*.stories.ts",
+        "src/**/*.stories.tsx"
+      ],
+      "extends": [
+        "plugin:storybook/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser"
+}
