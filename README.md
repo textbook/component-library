@@ -22,9 +22,7 @@ You can import the components you need and use them in your own as follows:
 import { Button } from "@codeyourfuture/component-library";
 
 export default function MyComponent() {
-  return (
-    <Button label="Click me!" onClick={() => alert("Hi there!")} /> 
-  );
+	return <Button label="Click me!" onClick={() => alert("Hi there!")} />;
 }
 ```
 
@@ -44,21 +42,22 @@ export default function MyComponent() {
 
 - `e2e`: Run [Cypress] tests to check that the package can be used in a fresh React app
 - `lint`: Run the [ESLint] code style checking
-    - `lint:fix`: Fix any linting violations with fixers 
+  - `lint:fix`: Fix any linting violations with fixers
 - `ship`: Run `lint`, then `test`, then `e2e`
 - `storybook`: Run the local [Storybook] dev server
-    - `storybook:build`: Build the static Storybook site
+  - `storybook:build`: Build the static Storybook site
 - `test`: Run the [Jest] unit tests
-    - `test:cover`: Run the tests with coverage reporting
+
+  - `test:cover`: Run the tests with coverage reporting
 
   [bash]: https://www.gnu.org/software/bash/
-  [Clone]: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
-  [CRA]: https://create-react-app.dev/
-  [Cypress]: https://www.cypress.io/
-  [ESLint]: https://eslint.org/
+  [clone]: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+  [cra]: https://create-react-app.dev/
+  [cypress]: https://www.cypress.io/
+  [eslint]: https://eslint.org/
   [fork]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
-  [Jest]: https://jestjs.io/
+  [jest]: https://jestjs.io/
   [jq]: https://stedolan.github.io/jq/
-  [React]: https://reactjs.org/
-  [Storybook]: https://storybook.js.org/
+  [react]: https://reactjs.org/
+  [storybook]: https://storybook.js.org/
   [styled-components]: https://styled-components.com/

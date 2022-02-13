@@ -4,5 +4,3 @@ reports/
 storybook-static/
 test_app/
 *.json
-*.md
-*.yml

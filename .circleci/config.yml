@@ -8,11 +8,11 @@ orbs:
 jobs:
   storybook:
     docker:
-      - image: 'cimg/base:stable'
+      - image: "cimg/base:stable"
     steps:
       - checkout
       - node/install:
-          node-version: '14.19'
+          node-version: "14.19"
       - node/install-packages
       - run:
           name: Install gh-pages
@@ -27,7 +27,7 @@ jobs:
           path: storybook-static
       - add_ssh_keys:
           fingerprints:
-            - 'c2:d3:12:f2:fc:99:7b:49:61:56:98:22:1c:7c:32:15'
+            - "c2:d3:12:f2:fc:99:7b:49:61:56:98:22:1c:7c:32:15"
       - run:
           name: Deploy to GitHub Pages
           command: gh-pages --message "[skip ci] Deploy Storybook" --dist storybook-static
@@ -37,14 +37,14 @@ workflows:
   build:
     jobs:
       - node/run:
-          npm-run: 'lint'
-          version: '14.19'
+          npm-run: "lint"
+          version: "14.19"
       - node/test:
           requires:
             - node/run
-          run-command: 'test:cover'
+          run-command: "test:cover"
           test-results-path: reports
-          version: '14.19'
+          version: "14.19"
       - cypress/run:
           requires:
             - node/test
