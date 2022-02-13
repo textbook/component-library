@@ -1,6 +1,15 @@
 {
   "coverageDirectory": "reports/coverage",
   "preset": "ts-jest",
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        "outputDirectory": "reports/jest/"
+      }
+    ]
+  ],
   "setupFilesAfterEnv": [
     "./setupTests.ts"
   ],
