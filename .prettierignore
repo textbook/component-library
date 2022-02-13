@@ -1,0 +1,9 @@
+lib/
+node_modules/
+reports/
+storybook-static/
+test_app/
+*.json
+*.md
+*.yml
+.*rc

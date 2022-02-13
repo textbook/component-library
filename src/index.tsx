@@ -7,7 +7,7 @@ export interface ButtonProps {
 }
 
 const StyledButton = styled.button`
-	background-color: #28A228;
+	background-color: #28a228;
 	border: none;
 	border-radius: 2px;
 	box-sizing: border-box;
