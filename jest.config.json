@@ -1,0 +1,11 @@
+{
+  "preset": "ts-jest",
+  "setupFilesAfterEnv": [
+    "./setupTests.ts"
+  ],
+  "testEnvironment": "jsdom",
+  "testPathIgnorePatterns": [
+    "/cypress/",
+    "/node_modules/"
+  ]
+}

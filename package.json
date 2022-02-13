@@ -2,11 +2,51 @@
   "name": "@codeyourfuture/component-library",
   "version": "1.0.0",
   "description": "Example component library with an agile approach",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rimraf ./lib",
+    "build": "tsc --project ./tsconfig.build.json",
+    "pree2e": "bin/create-test-app.sh",
+    "e2e": "concurrently --kill-others --names=\"app,e2e\" --success=first \"npm:e2e:app\" \"npm:e2e:run\"",
+    "pree2e:app": "npm --prefix=test_app run build",
+    "e2e:app": "serve -p 4321 -s test_app/build/",
+    "pree2e:run": "wait-on --log http-get://localhost:4321",
+    "e2e:run": "cross-env CYPRESS_BASE_URL=http://localhost:4321 cypress run",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
-  "license": "ISC"
+  "funding": "https://github.com/sponsors/CodeYourFuture",
+  "license": "ISC",
+  "engines": {
+    "node": "^12.13 || ^14.15 || >=16.13"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^9.4.1",
+    "jest": "^27.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5",
+    "wait-on": "^6.0.1"
+  }
 }
