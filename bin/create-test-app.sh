@@ -16,6 +16,7 @@ popd
 
 pushd "$TEST_DIR"
 	rm ./src/App.test.js
+	npm i styled-components
 	npm i "$ROOT"/codeyourfuture-component-library-*.tgz
 	cat <<-EOF > ./src/App.js
 	import { Button } from "@codeyourfuture/component-library";
