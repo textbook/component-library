@@ -17,7 +17,7 @@ popd
 pushd "$TEST_DIR"
 	rm ./src/App.test.js
 	npm i styled-components
-	npm i "$ROOT"/codeyourfuture-component-library-*.tgz
+	npm i "$ROOT/codeyourfuture-component-library-$(jq -r '.version' "$ROOT/package.json").tgz"
 	cat <<-EOF > ./src/App.js
 	import { Button } from "@codeyourfuture/component-library";
 	import { useState } from "react";
