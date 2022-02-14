@@ -2,6 +2,8 @@
 
 Example component library with an agile approach
 
+Check out component examples at https://blog.jonrshar.pe/component-library.
+
 ## Usage
 
 ### Installation
