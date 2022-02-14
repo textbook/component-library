@@ -12,7 +12,7 @@
     "build": "tsc --project ./tsconfig.build.json",
     "e2e": "concurrently --kill-others --names=\"app,e2e\" --success=first \"npm:e2e:app\" \"npm:e2e:run\"",
     "pree2e:app": "bin/create-test-app.sh",
-    "e2e:app": "serve -p 4321 -s test_app/build/",
+    "e2e:app": "serve --no-clipboard -p 4321 --single test_app/build/",
     "pree2e:run": "wait-on --log http-get://localhost:4321",
     "e2e:run": "cypress run --config='baseUrl=http://localhost:4321'",
     "lint": "prettier --check . && eslint .",
