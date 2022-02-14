@@ -15,19 +15,19 @@ const StyledButton = styled.button<Omit<ButtonProps, "label">>`
 	display: inline-block;
 	font-size: 14px;
 
-	${({ mode }) => {
+	${({ mode, theme }) => {
 		switch (mode) {
 			case "secondary":
 				return css`
-					background-color: #ffffff;
-					border: 2px solid #228722;
-					color: #228722;
+					background-color: ${theme.colors.secondary};
+					border: 2px solid ${theme.colors.primary};
+					color: ${theme.colors.primary};
 					padding: 6px 12px;
 				`;
 			default:
 				return css`
-					background-color: #228722;
-					color: #ffffff;
+					background-color: ${theme.colors.primary};
+					color: ${theme.colors.secondary};
 					padding: 8px 14px;
 				`;
 		}

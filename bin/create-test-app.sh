@@ -19,18 +19,19 @@ pushd "$TEST_DIR"
 	npm i styled-components
 	npm i "$ROOT/codeyourfuture-component-library-$(jq -r '.version' "$ROOT/package.json").tgz"
 	cat <<-EOF > ./src/App.js
-	import { Button } from "@codeyourfuture/component-library";
+	import { Button, theme } from "@codeyourfuture/component-library";
 	import { useState } from "react";
+	import { ThemeProvider } from "styled-components";
 
 	export default function App() {
 	  const [message, setMessage] = useState();
 	  return (
-	    <>
+	    <ThemeProvider theme={theme}>
 	      <h1>Example application</h1>
 	      <Button label="Click me!" onClick={() => setMessage("Hello, world!")} />
 	      {message && <p>{message}</p>}
-	    </>
-	  )
+	    </ThemeProvider>
+	  );
 	}
 	EOF
 	npm run build

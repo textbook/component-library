@@ -1,33 +1,42 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "styled-components";
 
-import { Button } from "./buttons";
+import { Button, ButtonProps } from "./buttons";
+import { cyfTheme } from "./theme";
 
 describe("Button", () => {
 	it("shows the label", () => {
 		const label = "Button label";
-		render(<Button label={label} onClick={() => {}} />);
+		renderThemed({ label });
 		expect(screen.getByRole("button")).toHaveTextContent(label);
 	});
 
 	it("calls the click event", () => {
 		const onClick = jest.fn();
-		render(<Button label="" onClick={onClick} />);
+		renderThemed({ onClick });
 		userEvent.click(screen.getByRole("button"));
 		expect(onClick).toHaveBeenCalled();
 	});
 
 	it("renders a primary colourway", () => {
-		render(<Button label="" onClick={() => {}} />);
+		renderThemed();
 		const primaryButton = screen.getByRole("button");
 		expect(primaryButton).toHaveStyle("background-color: #228722");
 		expect(primaryButton).toHaveStyle("color: #ffffff");
 	});
 
 	it("renders a secondary colourway", () => {
-		render(<Button label="" mode="secondary" onClick={() => {}} />);
+		renderThemed({ mode: "secondary" });
 		const secondaryButton = screen.getByRole("button");
 		expect(secondaryButton).toHaveStyle("background-color: #ffffff");
 		expect(secondaryButton).toHaveStyle("color: #228722");
 	});
+
+	const renderThemed = (overrides?: Partial<ButtonProps>) =>
+		render(
+			<ThemeProvider theme={cyfTheme}>
+				<Button label="" onClick={() => {}} {...overrides} />
+			</ThemeProvider>,
+		);
 });

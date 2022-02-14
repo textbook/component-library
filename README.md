@@ -26,6 +26,17 @@ export default function MyComponent() {
 }
 ```
 
+The CYF theme needs to be provided at the top level of your application:
+
+```jsx
+import { theme } from "@codeyourfuture/component-library";
+import { ThemeProvider } from "styled-components";
+
+export default function App() {
+	return <ThemeProvider theme={theme}>{/* ... */}</ThemeProvider>;
+}
+```
+
 ## Development
 
 ### Requirements

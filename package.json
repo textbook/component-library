@@ -39,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.2",
     "@codeyourfuture/eslint-config-standard": "^3.0.3",
+    "@react-theming/storybook-addon": "^1.1.5",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
