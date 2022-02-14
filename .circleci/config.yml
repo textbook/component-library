@@ -51,6 +51,8 @@ workflows:
           config: baseUrl=http://localhost:4321
           executor: cypress/base-14
           no-workspace: true
+          post-install:
+            - run: apt update && apt install jq -y
           start: npm run e2e:app
           store_artifacts: true
           wait-on: http-get://localhost:4321
