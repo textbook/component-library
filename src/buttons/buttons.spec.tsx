@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ThemeProvider } from "styled-components";
 
-import { Button, ButtonProps } from "./buttons";
-import { cyfTheme } from "./theme";
+import { Button, ButtonProps } from ".";
+import { cyfTheme } from "../theme";
 
 describe("Button", () => {
 	it("shows the label", () => {

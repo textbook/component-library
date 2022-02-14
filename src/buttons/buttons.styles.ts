@@ -1,13 +1,8 @@
-import { FC } from "react";
 import styled, { css } from "styled-components";
 
-export interface ButtonProps {
-	label: string;
-	mode?: "primary" | "secondary";
-	onClick: () => void;
-}
+import { ButtonProps } from ".";
 
-const StyledButton = styled.button<Omit<ButtonProps, "label">>`
+export const StyledButton = styled.button<Omit<ButtonProps, "label">>`
 	border: none;
 	border-radius: 2px;
 	box-sizing: border-box;
@@ -33,7 +28,3 @@ const StyledButton = styled.button<Omit<ButtonProps, "label">>`
 		}
 	}}
 `;
-
-export const Button: FC<ButtonProps> = ({ label, ...rest }) => (
-	<StyledButton {...rest}>{label}</StyledButton>
-);
